@@ -8,9 +8,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="style/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="style/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+        <script src="scripts/bootstrap.min.js" type="text/javascript"></script>
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
         <link href="style/calcStyle.css" rel="stylesheet" type="text/css"/>
-        <title>Start Page</title>
+        <title>JAH - Calculators</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
