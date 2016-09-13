@@ -12,6 +12,7 @@ package edu.wctc.jah.model;
 public class AreaCalculator {
     // needs validation
     public final static String ERRMSG = "Error";
+    public final static String SQIN = " in" + "\u00b2";
     
     
     public final String calcRect(String w, String l) {
@@ -23,7 +24,7 @@ public class AreaCalculator {
             return ERRMSG;
         }
         Double area = Double.valueOf(l) * Double.valueOf(w);
-        return area.toString()  + " in" + "\u00b2";
+        return area.toString()  + SQIN;
     }
     
     public final String calcCirc(String r) {
@@ -36,7 +37,7 @@ public class AreaCalculator {
         }
         Double radius = Double.valueOf(r);
         Double cArea =  Math.PI * Math.pow(radius, 2);
-        return String.format("%.2f", cArea)  + " in" + "\u00b2";
+        return String.format("%.2f", cArea)  + SQIN;
     }
     
     public final String calcTri(String b, String h) {
@@ -51,7 +52,7 @@ public class AreaCalculator {
         Double height = Double.valueOf(h);
         Double tArea = (base * height) / 2;
         
-        return String.format("%.2f", tArea) + " in" + "\u00b2";
+        return String.format("%.2f", tArea) + SQIN;
     }
     
 }
