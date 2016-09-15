@@ -9,12 +9,15 @@ and open the template in the editor.
 */
 
 html {
-    min-height: 100%
+    min-height: 100%;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.8em;
 }
 
 body {
-    padding: 50px;
+    /*padding: 50px;*/
     font-family: 'Noto Sans', sans-serif;
+    font-size: 0.8em;
     background: linear-gradient(#40104d, #aa3581);
 }
 
@@ -24,11 +27,23 @@ body {
     border-radius: 5px;
     box-shadow: 0px 0px 40px rgba(0,0,0,0.4);
     background-color: rgba(255,255,255,0.5);
-    width: 50%;
+    width: 100%;
+    margin: 30px 0px 30px 0px;
 }
 
 #rCalc h2, #rCalc2 h2, #cCalc h2, #tCalc h2 {
     margin-left: 20px;
+    font-size: 1.5em;
+    width: 70%;
+    background-color: rgba(255,255,255,0.4);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+h3 {
+    margin-left: 20px;
+    font-size: 1.3em;
+    padding: 5px;
 }
 
 .img {
@@ -83,9 +98,9 @@ label {
     top: 2px;
 }
 
-#rCalc2, #cCalc, #tCalc {
+/*#rCalc2, #cCalc, #tCalc {
     margin-top: 50px;
-}
+}*/
 
 .resultBox {
     min-height: 30px;

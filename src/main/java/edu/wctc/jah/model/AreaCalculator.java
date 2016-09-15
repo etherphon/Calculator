@@ -11,13 +11,13 @@ package edu.wctc.jah.model;
  */
 public class AreaCalculator {
     // needs validation
-    public final static String ERRMSG = "Error";
+    public final static String ERRMSG = "Missing or invalid numbers.";
     public final static String SQIN = " in" + "\u00b2";
     
     
     public final String calcRect(String w, String l) {
         try {
-            if (w == null || l == null || Double.valueOf(w) <= 0 || Double.valueOf(l) <= 0) {
+            if (w == null || l == null || Double.valueOf(w) <= 0 || Double.valueOf(l) <= 0 || w.isEmpty() || l.isEmpty()) {
                 return ERRMSG;
             }
         } catch(IllegalArgumentException e) {
@@ -29,7 +29,7 @@ public class AreaCalculator {
     
     public final String calcCirc(String r) {
         try {
-            if (r == null || Double.valueOf(r) <= 0) {
+            if (r == null || Double.valueOf(r) <= 0 || r.isEmpty()) {
                 return ERRMSG;
             }
         } catch(IllegalArgumentException e) {
@@ -42,7 +42,7 @@ public class AreaCalculator {
     
     public final String calcTri(String b, String h) {
         try {
-            if (b == null || h == null || Double.valueOf(b) < 0 || Double.valueOf(h) < 0) {
+            if (b == null || h == null || Double.valueOf(b) < 0 || Double.valueOf(h) < 0 || b.isEmpty() || h.isEmpty()) {
                 return ERRMSG;
             }
         } catch(IllegalArgumentException e) {

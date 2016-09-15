@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,6 +21,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
         <div id="rCalc">
             <h2>Rectangle Area Calculator</h2>
             <img class="img" id="rectImg" src="images/rect_36661_lg2.png" alt=""/>
@@ -30,25 +35,15 @@
         </div>
         
         <div id="rCalc2">
-            <h2>Inline Rectangle Area Calculator</h2>
+            <h2>In-line Rectangle Area Calculator</h2>
             <img class="img" id="rectImg" src="images/rect_36661_lg2.png" alt=""/>
             <form name="rectCalc2" id="rectCalc2" type="POST" action="calcthis?shape=RECT2">
                 <label for="rWidth2">Width:&nbsp;</label><input type="text" id="rWidth2" name="rWidth2">
                 <label for="rLength2">Length:&nbsp;</label><input type="text" id="rLength2" name="rLength2">
                 <input type="hidden" id="shape" name="shape" value="RECT2">
                 <input type="submit" value="Calculate" class="cButton">
-                <div class="resultBox">
-                    <%
-                        Object responseObj = request.getAttribute("rectArea2");
-                        Object errorObj = request.getAttribute("errorMsg");
-                        String msg = "Unknown";
-            
-                        if (responseObj != null) {
-                            msg = responseObj.toString();
-                        }
-        
-                    %>
-                    <h2>Area of this rectangle:&nbsp; <span class="result"><%= msg %></span></h2>
+                <div class="resultBox">                
+                    <h3>Area of this rectangle:&nbsp; <span class="result">${rectArea2}</span></h3>
                 </div>
             </form>
         </div>
@@ -61,17 +56,7 @@
                 <input type="hidden" id="shape" name="shape" value="CIRC">
                 <input type="submit" value="Calculate" class="cButton">
                 <div class="resultBox">
-                    <%
-                        Object responseObjCirc = request.getAttribute("circArea");
-                        Object errorObj2 = request.getAttribute("errorMsg");
-                        String msgCirc = "Unknown";
-            
-                        if (responseObjCirc != null) {
-                            msgCirc = responseObjCirc.toString();
-                        }
-        
-                    %>
-                    <h2>Area of this circle:&nbsp; <span class="result"><%= msgCirc %></span></h2>
+                    <h3>Area of this circle:&nbsp; <span class="result">${circArea}</span></h3>
                 </div>
             </form>
         </div>
@@ -85,21 +70,11 @@
                 <input type="hidden" id="shape" name="shape" value="TRI">
                 <input type="submit" value="Calculate" class="cButton">
                 <div class="resultBox">
-                    <%
-                        Object responseObjTri = request.getAttribute("triArea");
-                        Object errorObj3 = request.getAttribute("errorMsg");
-                        String msgTri = "Unknown";
-            
-                        if (responseObjTri != null) {
-                            msgTri = responseObjTri.toString();
-                        }
-        
-                    %>
-                    <h2>Area of this triangle:&nbsp; <span class="result"><%= msgTri %></span></h2>
+                    <h3>Area of this triangle:&nbsp; <span class="result">${triArea}</span></h3>
                 </div>
             </form>
-        </div>        
-                    
-                    
+        </div>
+        </div>
+        <div class="col-md-2"></div>
     </body>
 </html>
